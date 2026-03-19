@@ -28,6 +28,8 @@ router.post('/', (req, res) => {
         description,
         deadline,
         priority,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
         done
     };
     tasksData.tasks.push(newTask);
