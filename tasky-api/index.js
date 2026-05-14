@@ -7,7 +7,7 @@ import tasksRouter from './api/tasks';
 import './db';
 //... other imports
 import usersRouter from './api/users';
-
+import authenticate from './authenticate';
 
 
 
@@ -45,3 +45,5 @@ app.use(errHandler);
 app.listen(port, () => {
   console.info(`Server running at ${port}`);
 });
+
+app.use('/api/tasks', authenticate, tasksRouter);
